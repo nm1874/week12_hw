@@ -115,6 +115,21 @@ AInv <- solve(A)
 -AInv%*%B # Dg at the point z =3, t=4
 
 
+#5. 
+f<-function(t) 3*t + 2*exp(t) + exp(2*t) -10
+df<-function(t) 3+ 2*exp(t) + 2*exp(2*t)
+
+t0 <- 1
+
+t1 <- t0 - f(t0)/df(t0); t1
+t2 <- t1 - f(t1)/df(t1); t2
+t3 <- t2 - f(t2)/df(t2); t3
+t4 <- t3 - f(t3)/df(t3); t4
+t5 <- t4 - f(t4)/df(t4); t5
+
+g<-function(t) c(t+exp(t), t+exp(2*t))
+g(t5)
+
 
 library(numDeriv)
 # 7. 
